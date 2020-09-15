@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/main.css}">
+    <link rel="stylesheet" th:href="@{/dst/main.css}">
 </head>
 <body>
     <div th:replace="includes/header :: header"></div>
     <div th:replace="${view} :: content"></div>
     <div th:replace ="includes/footer :: footer"></div>
 
-    <script th:src="@{/main.js}"></script>
+    <script th:src="@{/dst/main.js}"></script>
 </body>
 </html>

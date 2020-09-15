@@ -7,6 +7,7 @@ public class Transactions {
     private Date date;
     private Money money;
     private Types types;
+    private Category category;
 
 }
 

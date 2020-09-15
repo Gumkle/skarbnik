@@ -1,4 +1,4 @@
-package transaction;
+package pl.skarbnik.skarbnik.transaction;
 
 public class Money {
 

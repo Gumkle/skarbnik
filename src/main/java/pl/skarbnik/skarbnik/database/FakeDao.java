@@ -1,22 +1,24 @@
 package pl.skarbnik.skarbnik.database;
 
-import pl.skarbnik.skarbnik.transaction.Transactions;
+import org.springframework.stereotype.Repository;
+import pl.skarbnik.skarbnik.transaction.Transaction;
 
 import java.util.*;
 
+@Repository("fakeDao")
 public class FakeDao implements TransactionDAO {
 
-    private Map<UUID, Transactions> map = new HashMap<>();
+    private Map<UUID, Transaction> map = new HashMap<>();
 
     @Override
-    public int insertTransaction(Transactions transaction) {
+    public int addTransaction(Transaction transaction) {
         UUID id = UUID.randomUUID();
         map.put(id, transaction);
         return 1;
     }
 
     @Override
-    public int editTransaction(UUID id, Transactions transaction) {
+    public int editTransaction(UUID id, Transaction transaction) {
         map.replace(id, transaction);
         return 1;
     }

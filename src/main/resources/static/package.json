@@ -2,16 +2,24 @@
   "name": "static",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "main": "webpack.config.js",
   "dependencies": {
     "bootstrap": "^4.5.2",
     "node-sass": "^4.14.1",
-    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
-  }
+  },
+  "devDependencies": {
+    "css-loader": "^4.3.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC"
 }

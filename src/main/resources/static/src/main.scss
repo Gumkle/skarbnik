@@ -1,1 +1,15 @@
 @import "~bootstrap";
+
+.icon {
+  display: inline-block;
+  &.trash {
+    svg {
+      color: $danger;
+    }
+  }
+  &.pencil {
+    svg {
+      color: $info;
+    }
+  }
+}

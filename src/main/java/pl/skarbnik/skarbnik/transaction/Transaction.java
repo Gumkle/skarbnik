@@ -1,9 +1,6 @@
 package pl.skarbnik.skarbnik.transaction;
 
-import pl.skarbnik.skarbnik.users.Users;
-
 import java.util.Date;
-import java.util.UUID;
 
 public class Transaction {
 
@@ -12,7 +9,27 @@ public class Transaction {
     private Types types;
     private Category category;
 
-    public Transaction(UUID id, Users users){
+    public Transaction(Date date, Money money, Types types, Category category) {
+        this.date = date;
+        this.money = money;
+        this.types = types;
+        this.category = category;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Money getMoney() {
+        return money;
+    }
+
+    public Types getTypes() {
+        return types;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 }
 

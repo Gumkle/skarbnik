@@ -24,7 +24,7 @@ public class TransactionController {
         transactionService.addTransaction(transaction);
     }
 
-    @PutMapping({"{id}"})
+    @PutMapping("{id}")
     public void editTransaction(@PathVariable("id") UUID id,@RequestBody Transaction transaction) {
         transactionService.editTransaction(id, transaction);
     }
@@ -35,7 +35,7 @@ public class TransactionController {
     }
 
     @GetMapping
-    public List<String> listTransaction() {
+    public List<Transaction> listTransaction() {
       return transactionService.transactionsList();
     }
 }

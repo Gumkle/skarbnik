@@ -30,8 +30,8 @@ public class FakeDao implements TransactionDAO {
     }
 
     @Override
-    public List<String> transactionsList() {
-        List<String> list = new ArrayList(map.values());
+    public List<Transaction> transactionsList() {
+        List<Transaction> list = new ArrayList(map.values());
         return list;
     }
 }

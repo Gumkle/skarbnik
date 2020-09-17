@@ -10,7 +10,7 @@ public interface TransactionDAO {
     int addTransaction(Transaction transaction);
     int editTransaction(UUID id, Transaction transaction);
     int deleteTransaction(UUID id);
-    List<String> transactionsList();
+    List<Transaction> transactionsList();
 
     }
 

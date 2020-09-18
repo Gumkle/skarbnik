@@ -8,7 +8,7 @@ import pl.skarbnik.skarbnik.transaction.Transaction;
 import java.util.List;
 import java.util.UUID;
 
-@RequestMapping
+@RequestMapping("/api/transactions")
 @RestController
 public class TransactionController {
 
@@ -19,22 +19,22 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @PostMapping
+    @PostMapping("/{transaction}")
     public void addTransaction(@RequestBody Transaction transaction) {
         transactionService.addTransaction(transaction);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("{transaction}/{id}")
     public void editTransaction(@PathVariable("id") UUID id,@RequestBody Transaction transaction) {
         transactionService.editTransaction(id, transaction);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("{transaction}/{id}")
     public void deleteTransaction(@PathVariable("id") UUID id) {
         transactionService.deleteTransaction(id);
     }
 
-    @GetMapping
+    @GetMapping("/{transaction}")
     public List<Transaction> listTransaction() {
       return transactionService.transactionsList();
     }

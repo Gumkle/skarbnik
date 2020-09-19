@@ -1,4 +1,4 @@
-package pl.skarbnik.skarbnik.transaction;
+package pl.skarbnik.skarbnik.models;
 
 public class Category {
 

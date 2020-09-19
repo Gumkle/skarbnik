@@ -1,15 +1,14 @@
 package pl.skarbnik.skarbnik.database;
 
-import pl.skarbnik.skarbnik.transaction.Transaction;
+import pl.skarbnik.skarbnik.models.Transaction;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface TransactionDAO {
 
-    int addTransaction(Transaction transaction);
-    int editTransaction(UUID id, Transaction transaction);
-    int deleteTransaction(UUID id);
+    void addTransaction(Transaction transaction);
+    void editTransaction(String id, Transaction transaction);
+    void deleteTransaction(String id);
     List<Transaction> transactionsList();
 
     }

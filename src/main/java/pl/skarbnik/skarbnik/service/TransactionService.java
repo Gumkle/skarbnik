@@ -2,9 +2,8 @@ package pl.skarbnik.skarbnik.service;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import pl.skarbnik.skarbnik.database.FakeDao;
 import pl.skarbnik.skarbnik.database.TransactionDAO;
-import pl.skarbnik.skarbnik.transaction.Transaction;
+import pl.skarbnik.skarbnik.models.Transaction;
 
 import java.util.List;
 import java.util.UUID;
@@ -18,16 +17,16 @@ public class TransactionService {
         this.transactionDAO = transactionDAO;
     }
 
-    public int addTransaction(Transaction transaction) {
-        return transactionDAO.addTransaction(transaction);
+    public void addTransaction(Transaction transaction) {
+        transactionDAO.addTransaction(transaction);
     }
 
-    public int editTransaction(UUID id, Transaction transaction) {
-        return transactionDAO.editTransaction(id, transaction);
+    public void editTransaction(String id, Transaction transaction) {
+        transactionDAO.editTransaction(id, transaction);
     }
 
-    public int deleteTransaction(UUID id) {
-        return transactionDAO.deleteTransaction(id);
+    public void deleteTransaction(String id) {
+         transactionDAO.deleteTransaction(id);
     }
 
     public List<Transaction> transactionsList() {

@@ -3,12 +3,12 @@ package pl.skarbnik.skarbnik.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.skarbnik.skarbnik.service.TransactionService;
-import pl.skarbnik.skarbnik.transaction.Transaction;
+import pl.skarbnik.skarbnik.models.Transaction;
 
 import java.util.List;
 import java.util.UUID;
 
-@RequestMapping("/api/transactions")
+@RequestMapping("/api/transaction")
 @RestController
 public class TransactionController {
 
@@ -19,22 +19,22 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @PostMapping("/{transaction}")
+    @PostMapping("/")
     public void addTransaction(@RequestBody Transaction transaction) {
         transactionService.addTransaction(transaction);
     }
 
-    @PutMapping("{transaction}/{id}")
-    public void editTransaction(@PathVariable("id") UUID id,@RequestBody Transaction transaction) {
+    @PutMapping("/{id}")
+    public void editTransaction(@PathVariable("id") String id,@RequestBody Transaction transaction) {
         transactionService.editTransaction(id, transaction);
     }
 
-    @DeleteMapping("{transaction}/{id}")
-    public void deleteTransaction(@PathVariable("id") UUID id) {
+    @DeleteMapping("{transaction}")
+    public void deleteTransaction(@PathVariable("id") String id) {
         transactionService.deleteTransaction(id);
     }
 
-    @GetMapping("/{transaction}")
+    @GetMapping("{transaction}")
     public List<Transaction> listTransaction() {
       return transactionService.transactionsList();
     }

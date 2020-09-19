@@ -1,7 +1,7 @@
 package pl.skarbnik.skarbnik.database;
 
 import org.springframework.stereotype.Repository;
-import pl.skarbnik.skarbnik.transaction.Transaction;
+import pl.skarbnik.skarbnik.models.Transaction;
 
 import java.util.*;
 
@@ -11,22 +11,19 @@ public class FakeDao implements TransactionDAO {
     private Map<UUID, Transaction> map = new HashMap<>();
 
     @Override
-    public int addTransaction(Transaction transaction) {
+    public void addTransaction(Transaction transaction) {
         UUID id = UUID.randomUUID();
         map.put(id, transaction);
-        return 1;
     }
 
     @Override
-    public int editTransaction(UUID id, Transaction transaction) {
-        map.replace(id, transaction);
-        return 1;
+    public void editTransaction(String id, Transaction transaction) {
+        map.replace(UUID.fromString(id), transaction);
     }
 
     @Override
-    public int deleteTransaction(UUID id) {
-        map.remove(id);
-        return 1;
+    public void deleteTransaction(String id) {
+        map.remove(UUID.fromString(id));
     }
 
     @Override

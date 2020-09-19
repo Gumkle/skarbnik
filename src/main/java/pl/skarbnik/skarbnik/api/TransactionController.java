@@ -8,7 +8,7 @@ import pl.skarbnik.skarbnik.models.Transaction;
 import java.util.List;
 import java.util.UUID;
 
-@RequestMapping("/api/transaction")
+@RequestMapping("/api/transactions")
 @RestController
 public class TransactionController {
 

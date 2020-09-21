@@ -15,6 +15,22 @@ public class Transaction {
         this.type = type;
         this.category = category;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Money getMoney() {
+        return money;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
 }
 
 

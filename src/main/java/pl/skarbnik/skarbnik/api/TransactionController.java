@@ -6,7 +6,6 @@ import pl.skarbnik.skarbnik.service.TransactionService;
 import pl.skarbnik.skarbnik.models.Transaction;
 
 import java.util.List;
-import java.util.UUID;
 
 @RequestMapping("/api/transactions")
 @RestController
@@ -29,12 +28,12 @@ public class TransactionController {
         transactionService.editTransaction(id, transaction);
     }
 
-    @DeleteMapping("{transaction}")
+    @DeleteMapping("{id}")
     public void deleteTransaction(@PathVariable("id") String id) {
         transactionService.deleteTransaction(id);
     }
 
-    @GetMapping("{transaction}")
+    @GetMapping
     public List<Transaction> listTransaction() {
       return transactionService.transactionsList();
     }

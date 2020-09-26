@@ -1,0 +1,5 @@
+add:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/skarbnik_db
+    username: skarbnik_admin
+    password: pass123

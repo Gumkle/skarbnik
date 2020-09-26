@@ -3,10 +3,11 @@ version: '3'
 services:
   database:
     image: postgres
+    restart: always
 
     environment:
+      POSTGRES_USERNAME: skarbnik_admin
       POSTGRES_PASSWORD: pass123
-      POSTGRES_USER: skarbnik_admin
       POSTGRES_DB: skarbnik_db
 
     ports:

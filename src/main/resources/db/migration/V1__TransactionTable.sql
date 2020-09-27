@@ -1,28 +1,22 @@
 CREATE TABLE Transaction (
     id INT NOT NULL PRIMARY KEY,
-);
-
-CREATE TABLE Category (
-    id INT NOT NULL PRIMARY KEY,
-    TransactionId INT FOREIGN KEY REFERENCES Transaction(id),
-    category VARCHAR(100)
-);
-
-CREATE TABLE Money (
-    id INT NOT NULL PRIMARY KEY,
-    TransactionId INT FOREIGN KEY REFERENCES Transaction(id),
-    whole INT NOT NULL,
-    decimal INT NOT NULL
-);
+    type INT FOREIGN KEY REFERENCES (type_id)
+    category INT FOREIGN KEY REFERENCES (category_id)
+    money INT FOREIGN KEY REFERENCES (money_id)
+)
 
 CREATE TABLE Type (
-    id INT NOT NULL PRIMARY KEY,
-    TransactionId INT FOREIGN KEY REFERENCES Transaction(id),
-    outflow
-);
+    type_id INT NOT NULL PRIMARY KEY
+)
 
-CREATE TABLE Date (
-    id INT NOT NULL PRIMARY KEY,
-    TransactionId INT FOREIGN KEY REFERENCES Transaction(id),
-    Date DATE
-);
+CREATE TABLE Category (
+    category_id IN NOT NULL PRIMARY KEY,
+    name VARCHAR(50)
+)
+
+CREATE TABLE Money (
+    money_id INT NOT NULL PRIMARY KEY,
+    amount DOUBLE
+)
+
+

@@ -2,13 +2,13 @@ version: "3.8"
 
 services:
   database:
-    image: postgres
+    image: postgres:alpine
     restart: always
 
     environment:
-      POSTGRES_USERNAME: skarbnik_admin
+      POSTGRES_USERNAME: skarbnikadmin
       POSTGRES_PASSWORD: pass123
-      POSTGRES_DB: skarbnik_db
+      POSTGRES_DB: skarbnikdb
 
     ports:
     - "5432:5432"

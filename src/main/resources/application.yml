@@ -1,4 +1,4 @@
-add:
+app:
   datasource:
     jdbc-url: jdbc:postgresql://localhost:5432/skarbnik_db
     username: skarbnik_admin

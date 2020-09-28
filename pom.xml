@@ -16,7 +16,9 @@
 
 	<properties>
 		<java.version>11</java.version>
+        <start-class>com.SkarbnikApplication</start-class>
 	</properties>
+
 
 	<dependencies>
 		<dependency>
@@ -53,8 +55,9 @@
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
+			<artifactId>flyway-maven-plugin</artifactId>
+            <version>6.5.4</version>
+        </dependency>
 	</dependencies>
 
 	<build>

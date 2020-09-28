@@ -7,16 +7,17 @@ CREATE TABLE Transaction (
 
 CREATE TABLE Type (
     type_id INT NOT NULL PRIMARY KEY
+    type VARCHAR NOT NULL
 )
 
 CREATE TABLE Category (
     category_id IN NOT NULL PRIMARY KEY,
-    name VARCHAR(50)
+    name VARCHAR(50) NOT NULL
 )
 
 CREATE TABLE Money (
     money_id INT NOT NULL PRIMARY KEY,
-    amount DOUBLE
+    amount DOUBLE NOT NULL
 )
 
 

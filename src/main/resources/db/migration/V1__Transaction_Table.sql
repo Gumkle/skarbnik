@@ -1,22 +1,30 @@
 CREATE TABLE type (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50)
+    id SERIAL NOT NULL,
+    name VARCHAR(50),
+    PRIMARY KEY (id, name),
+    UNIQUE (name)
 );
 
 CREATE TABLE category (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50)
+    id SERIAL NOT NULL,
+    category VARCHAR(50),
+    PRIMARY KEY (id, category),
+    UNIQUE (category)
 );
 
 CREATE TABLE money (
-    id SERIAL PRIMARY KEY,
-    whole INTEGER,
-    rest INTEGER
+    id SERIAL NOT NULL,
+    whole INTEGER UNIQUE,
+    rest INTEGER UNIQUE,
+    PRIMARY KEY (id, whole, rest),
+    UNIQUE (whole, rest)
 );
 
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
-    type INTEGER REFERENCES type (id),
-    category INTEGER REFERENCES category (id),
-    money INTEGER REFERENCES money (id)
+    name VARCHAR(50) REFERENCES type (name),
+    category VARCHAR(50) REFERENCES category (category),
+    whole INTEGER REFERENCES money (whole),
+    rest INTEGER REFERENCES money (rest),
+    created DATE NOT NULL
 );

@@ -18,5 +18,6 @@ CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
     type INTEGER REFERENCES type (id),
     category INTEGER REFERENCES category (id),
-    money INTEGER REFERENCES money (id)
+    money INTEGER REFERENCES money (id),
+    created DATE
 );

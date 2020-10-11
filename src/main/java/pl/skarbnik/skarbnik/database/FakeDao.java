@@ -27,7 +27,7 @@ public class FakeDao implements TransactionDAO {
     }
 
     @Override
-    public List<Transaction> transactionsList() {
+    public List<Transaction> getTransactionsList() {
         List<Transaction> list = new ArrayList(map.values());
         return list;
     }

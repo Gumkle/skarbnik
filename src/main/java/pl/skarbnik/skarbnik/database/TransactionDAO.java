@@ -9,7 +9,7 @@ public interface TransactionDAO {
     void addTransaction(Transaction transaction);
     void editTransaction(String id, Transaction transaction);
     void deleteTransaction(String id);
-    List<Transaction> transactionsList();
+    List<Transaction> getTransactionsList();
 
     }
 

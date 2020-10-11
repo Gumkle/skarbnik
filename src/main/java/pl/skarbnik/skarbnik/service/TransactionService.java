@@ -6,7 +6,6 @@ import pl.skarbnik.skarbnik.database.TransactionDAO;
 import pl.skarbnik.skarbnik.models.Transaction;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class TransactionService {
@@ -30,6 +29,6 @@ public class TransactionService {
     }
 
     public List<Transaction> transactionsList() {
-        return transactionDAO.transactionsList();
+        return transactionDAO.getTransactionsList();
     }
 }

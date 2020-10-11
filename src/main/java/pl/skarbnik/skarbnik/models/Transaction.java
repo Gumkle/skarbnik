@@ -4,24 +4,22 @@ import java.util.Date;
 
 public class Transaction {
 
-    private final Date date;
-    private final Money money;
+    private final String id;
     private final Type type;
     private final Category category;
+    private final Money money;
+    private final Date date;
 
-    public Transaction(Date date, Money money, Type type, Category category) {
-        this.date = date;
-        this.money = money;
+    public Transaction(String id, Type type, Category category, Money money, Date date) {
+        this.id = id;
         this.type = type;
         this.category = category;
+        this.money = money;
+        this.date = date;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public Money getMoney() {
-        return money;
+    public String getId() {
+        return id;
     }
 
     public Type getType() {
@@ -31,6 +29,14 @@ public class Transaction {
     public Category getCategory() {
         return category;
     }
-}
 
+    public Money getMoney() {
+        return money;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+}
 

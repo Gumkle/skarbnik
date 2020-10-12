@@ -1,6 +1,7 @@
 package pl.skarbnik.skarbnik.database;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import pl.skarbnik.skarbnik.models.Transaction;
@@ -41,8 +42,7 @@ public class PostgresData implements TransactionDAO {
 
     @Override
     public List<Transaction> getTransactionsList() {
-        List<Transaction> transactionList = new ArrayList<>();
-        transactionList.addAll(jdbcTemplate.queryForList("SELECT * FROM transactions", Transaction.class));
-        return getTransactionsList();
+        List<Transaction> transactionList = jdbcTemplate.query("SELECT * FROM transactions", new BeanPropertyRowMapper<>(Transaction.class));
+        return transactionList;
     }
 }
